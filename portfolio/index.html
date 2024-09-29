@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawan - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: #333;
+            /* Dark grey for nav */
+            padding: 0 20px;
+        }
+
+        nav .left {
+            font-size: 1.5rem;
+            color: gold;
+            /* Golden color for the text */
+        }
+
+        nav .right ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav .right ul li {
+            list-style: none;
+            margin: 0 20px;
+        }
+
+        nav .right ul li a {
+            text-decoration: none;
+            color: gold;
+            font-size: 1.2rem;
+        }
+
+        nav .right ul li a:hover {
+            color: #f5c518;
+            font-size: 1.25rem;
+        }
+
+        main hr {
+            border: 0;
+            background: gold;
+            height: 1.2px;
+            margin: 60px 84px;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 80px;
+            background-color: black;
+            /* Pure black background */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            margin: 80px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .firstsection:hover {
+            transform: scale(1.02);
+            /* Slight hover effect */
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.6);
+            /* Golden shadow on hover */
+        }
+
+        .leftsection {
+            font-size: 2.5rem;
+            color: gold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 50%;
+        }
+
+        .leftsection h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            /* Subtle text shadow */
+        }
+
+        .leftsection h1 span {
+            color: #ffd700;
+            /* Bright golden color */
+        }
+
+        .leftsection h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            /* Softer contrast */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .resume-button {
+            text-decoration: none;
+            color: gold;
+            background-color: transparent;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 2px solid gold; /* Golden border */
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0px 6px 15px rgba(255, 215, 0, 0.4);
+            cursor: pointer;
+        }
+        
+        .resume-button:hover {
+            background-color: gold;
+            color: black;
+            transform: translateY(-3px);
+            box-shadow: 0px 10px 25px rgba(255, 215, 0, 0.7);
+        }
+        
+
+        .rightsection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .rightsection img {
+            width: 420px;
+            height: auto;
+            border-radius: 20px;
+            border: 3px solid gold;
+            /* Golden border */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            /* Dark shadow for depth */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .rightsection img:hover {
+            transform: scale(1.08);
+            /* Image enlarges on hover */
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.9);
+            /* Stronger shadow */
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: gold;
+            font-size: 1.3rem;
+            padding: 10px 15px;
+            border: 2px solid gold;
+            border-radius: 50px;
+            /* Rounded buttons */
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 6px 15px rgba(255, 215, 0, 0.4);
+            /* Soft shadow for links */
+        }
+
+        .social-links a:hover {
+            background-color: gold;
+            color: black;
+            transform: translateY(-3px);
+            /* Lift effect on hover */
+            box-shadow: 0px 10px 25px rgba(255, 215, 0, 0.7);
+            /* Golden glow on hover */
+        }
+
+        .social-links img {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover img {
+            transform: scale(1.1);
+            /* Slightly larger icon on hover */
+        }
+
+        .about-section,
+        .contact-section {
+            padding: 80px 40px;
+            background-color: black;
+            text-align: center;
+            border: 2px solid gold;
+            border-radius: 10px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+            max-width: 80%;
+            margin: 40px auto;
+        }
+
+        .about-section h2,
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: gold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .about-section p,
+        .contact-section p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: white;
+            width: 80%;
+            text-align: justify;
+        }
+        .contact-section p {
+            font-size: 1.3rem;
+            color: white;
+            margin: 0 auto 50px auto; /* Center the paragraph and adjust the bottom margin */
+            line-height: 1.8;
+            max-width: 600px; /* Optional: Adjust max-width to fit your design */
+        }
+        
+
+        .projects-section {
+            padding: 80px 40px;
+            background-color: black;
+            text-align: center;
+        }
+
+        .projects-section h2 {
+            font-size: 2.5rem;
+            color: gold;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project {
+            position: relative;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .project:hover img {
+            opacity: 0.85;
+        }
+
+        .project a {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(170, 107, 228, 0.9);
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            padding: 15px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .project a:hover {
+            background-color: rgba(170, 107, 228, 1);
+        }
+
+        .contact-section {
+            padding: 80px 40px;
+            background-color: black;
+            text-align: center;
+            border: 2px solid gold;
+            border-radius: 10px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+            max-width: 80%;
+            margin: 40px auto;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: gold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .contact-section p {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: gold;
+            font-size: 1.3rem;
+            padding: 15px 30px;
+            border: 2px solid gold;
+            border-radius: 50px;
+            background-color: black;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-info a:hover {
+            background-color: gold;
+            color: black;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .contact-info img {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info a:hover img {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #0e0e1a;
+            color: gray;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background for the body */
+            color: #fff; /* White text color */
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #222; /* Dark background for the footer */
+            border-top: 2px solid #FFD700; /* Golden border at the top of the footer */
+        }
+        .footer h3 {
+            color: #FFD700; /* Golden color for the title */
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer ul li {
+            margin: 5px 0;
+        }
+        .footer ul li a {
+            color: #fff; /* White text for links */
+            text-decoration: none;
+        }
+        .footer ul li a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        .footer-rights {
+            text-align: center;
+            padding: 10px;
+            background-color: #111; /* Slightly darker background for the rights section */
+            border-top: 2px solid #FFD700; /* Golden border at the top */
+        }
+        #element {
+            color: #FFD700; /* Golden color for the typed text */
+        }
+        .footer {
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+            color: gray;
+            font-size: 1rem;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer ul li a {
+            text-decoration: none;
+            color: gray;
+        }
+
+        .footer ul li a:hover {
+            color: gold;
+        }
+
+        .footer .social-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer .social-links a {
+            margin: 0 10px;
+            color: gray;
+            font-size: 1.5rem;
+        }
+
+        .footer .social-links a:hover {
+            color: gold;
+        }
+
+        .footer .social-links img {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+        }
+
+        .contact-section {
+            padding: 80px 40px;
+            background-color: black;
+            text-align: center;
+            border: 2px solid gold;
+            border-radius: 10px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+            max-width: 80%;
+            margin: 40px auto;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: gold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .contact-section p {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .contact-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background-color: #222;
+            border: 2px solid gold;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .contact-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            color: gold;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background-color: gold;
+            color: black;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: black;
+            color: gold;
+            border: 2px solid gold;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Pawan's Portfolio</div>
+            <div id="element"></div> <!-- Add this element for the typed text effect -->
+            <div class="right">
+                <ul>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Services</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                <section class="first-section">
+                    <h1>Welcome to My Portfolio</h1>
+                    <p>Explore my projects and achievements. Feel free to download my resume to learn more about my
+                        background.</p>
+                        <a href="pawan.resume.pdf" class="resume-button" target="_blank">Download Resume</a>
+                    </section>
+
+            </div>
+            <div class="rightsection">
+                <img src="ps.png" alt="Profile image">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/pawan-kumar-0a49a5269/" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo">
+                        LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/pawan_prajapati_1435/profilecard/?igsh=OHM0ZGpvYTY1ZGJ5"
+                        target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram Logo">
+                        Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <hr>
+
+        <!-- New About Me Section -->
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p>
+                I am a 3rd-year B.Tech student majoring in Computer Science and Engineering with a specialization in
+                Artificial Intelligence and Machine Learning at Asansol Engineering College. As a passionate frontend
+                developer, I have a strong foundation in HTML, CSS, and JavaScript. I enjoy creating visually appealing
+                and user-friendly web applications, and I'm constantly seeking opportunities to expand my skill set and
+                stay updated with the latest trends in web development.
+            </p>
+        </section>
+        <hr>
+        <section class="projects-section">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <img src="ss.png" alt="Landing Page Project Image">
+                    <a href="https://landingpagesk.netlify.app/" target="_blank">
+                        Landing Page
+                    </a>
+                </div>
+                <div class="project">
+                    <img src="pg.png" alt="Code Editor Project Image">
+                    <a href="https://codeeditorsk.netlify.app/" target="_blank">
+                        Code Editor
+                    </a>
+                </div>
+                <div class="project">
+                    <img src="pp.png" alt="Amazon Clone Project Image">
+                    <a href="https://amazoncloneskk.netlify.app/" target="_blank">
+                        Amazon Clone
+                    </a>
+                </div>
+                <div class="project">
+                    <img src="calculator.png" alt="Calculator Project Image">
+                    <a href="https://calculatorskk.netlify.app/" target="_blank">
+                        Calculator
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <hr>
+        <section class="contact-section">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me through the following platforms or via email.</p>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon">
+                    <h3>Email</h3>
+                    <p>bikashpawan8@gmail.com</p>
+                    <a href="mailto:bikashpawan8@gmail.com" class="contact-button">Send an Email</a>
+                </div>
+                <div class="contact-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon">
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me on LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/pawan-kumar-0a49a5269/" target="_blank"
+                        class="contact-button">Visit LinkedIn</a>
+                </div>
+                <div class="contact-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram Icon">
+                    <h3>Instagram</h3>
+                    <p>Follow me on Instagram</p>
+                    <a href="https://www.instagram.com/pawan_prajapati_1435/profilecard/?igsh=OHM0ZGpvYTY1ZGJ5"
+                        target="_blank" class="contact-button">Visit Instagram</a>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Pawan's Developer Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li>Home</li>
+                    <li>About
+                    <li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169; Pawansportfolio.com | All rights reserved
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+
+</body>
+
+</html>
